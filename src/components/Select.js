@@ -24,6 +24,7 @@ const Base = styled.select`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  width: 100%;
 
   &:hover {
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
@@ -48,10 +49,10 @@ const Wrapper = styled.span`
   }
 `
 
-const Component = props => {
+const Component = ({ children, value, onChange, ...props }) => {
   return (
-    <Wrapper>
-      <Base {...props} />
+    <Wrapper {...props}>
+      <Base value={value} onChange={onChange} children={children} />
     </Wrapper>
   )
 }

@@ -6,17 +6,10 @@ import Input from '../components/Input'
 const Container = styled.div`margin: 30px;`
 
 storiesOf('Input', module)
+  .addDecorator(story => <Container>{story()}</Container>)
   .addWithInfo('Standard', () => {
-    return (
-      <Container>
-        <Input placeholder='Placeholder Text' />
-      </Container>
-    )
+    return <Input placeholder='Placeholder Text' />
   })
   .addWithInfo('Emphasized', () => {
-    return (
-      <Container>
-        <Input emphasized placeholder='Placeholder Text' />
-      </Container>
-    )
+    return <Input emphasized placeholder='Placeholder Text' />
   })

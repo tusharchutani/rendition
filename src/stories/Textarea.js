@@ -8,10 +8,8 @@ const Container = styled.div`
   max-width: 666px;
 `
 
-storiesOf('Textarea', module).addWithInfo('Standard', () => {
-  return (
-    <Container>
-      <Textarea placeholder='Placeholder Text' />
-    </Container>
-  )
-})
+storiesOf('Textarea', module)
+  .addDecorator(story => <Container>{story()}</Container>)
+  .addWithInfo('Standard', () => {
+    return <Textarea placeholder='Placeholder Text' />
+  })

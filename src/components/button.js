@@ -16,6 +16,7 @@ const Base = styled.button`
   text-decoration: none;
   border: 0;
   margin: 0;
+  min-width: 135px;
   vertical-align: middle;
   font-size: inherit;
   line-height: 1.1;
@@ -57,7 +58,7 @@ const setDefaultProps = withProps(props => {
     {
       bg: 'transparent',
       color: color,
-      px: 4,
+      px: 16,
       py: 2,
       border: '1px solid',
       borderColor: lighten(color),

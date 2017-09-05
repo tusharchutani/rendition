@@ -6,25 +6,22 @@ import Select from '../components/Select'
 const Container = styled.div`margin: 30px;`
 
 storiesOf('Select', module)
+  .addDecorator(story => <Container>{story()}</Container>)
   .addWithInfo('Standard', () => {
     return (
-      <Container>
-        <Select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </Select>
-      </Container>
+      <Select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </Select>
     )
   })
   .addWithInfo('Emphasized', () => {
     return (
-      <Container>
-        <Select emphasized>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </Select>
-      </Container>
+      <Select emphasized>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </Select>
     )
   })
