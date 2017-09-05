@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 /**
   Date Time types use momentjs for comparison, so the input and target value

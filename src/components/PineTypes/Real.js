@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 const pF = val => parseFloat(val)
 

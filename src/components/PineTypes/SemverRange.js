@@ -1,7 +1,7 @@
 import * as semver from 'resin-semver'
 import _ from 'lodash'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 /**
  * See the node-semver docs for more information on semver ranges

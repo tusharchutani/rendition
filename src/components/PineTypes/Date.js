@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 /**
   Date compares the day as the lowest level of granularity.

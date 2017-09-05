@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 /**
   Time types compare the time section only and ignore date.

@@ -22,6 +22,6 @@ export default {
   Text: TextType,
   Time: TimeType,
 
-  'semver-range': SemverRangeType,
-  semver: SemverType
+  'Semver Range': SemverRangeType,
+  Semver: SemverType
 }

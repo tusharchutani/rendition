@@ -1,7 +1,7 @@
 import RegexParser from 'regex-parser'
 import _ from 'lodash'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 import showdown from 'showdown'
 
 const converter = new showdown.Converter()

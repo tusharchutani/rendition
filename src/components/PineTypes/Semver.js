@@ -1,7 +1,7 @@
 import * as semver from 'resin-semver'
 import _ from 'lodash'
 import { h } from 'preact'
-import { Input } from 'rebass'
+import Input from '../Input'
 
 export const rules = {
   is: (target, value) => target && semver.compare(target, value) === 0,

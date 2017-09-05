@@ -1,7 +1,7 @@
 import RegexParser from 'regex-parser'
 import _ from 'lodash'
 import { h } from 'preact'
-import { Textarea } from 'rebass'
+import Textarea from '../Textarea'
 import showdown from 'showdown'
 
 const converter = new showdown.Converter()
