@@ -146,6 +146,7 @@ declare module 'resin-components' {
 		square?: boolean;
 		disabled?: boolean;
 		outline?: boolean;
+		plaintext?: boolean;
 		underline?: boolean;
 	}
 
