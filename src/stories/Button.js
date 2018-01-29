@@ -14,7 +14,12 @@ storiesOf('Button', module)
   .addWithInfo('Standard', () => {
     return (
       <Container>
-        <Button mx={2} primary onPress={action('case-1')}>
+        <Button
+          tooltip='Test tooltip'
+          mx={2}
+          primary
+          onPress={action('case-1')}
+        >
           Button
         </Button>
         <Button mx={2} secondary onPress={action('case-2')}>
