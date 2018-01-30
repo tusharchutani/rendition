@@ -1,37 +1,94 @@
 import * as React from 'react'
-import { storiesOf } from '@storybook/react'
-import styled from 'styled-components'
-import { Tooltip } from '../'
-
-const Container = styled.div`
-  margin: 60px;
-`
+import { storiesOf, action } from '@storybook/react'
+import { Button, Box } from '../'
 
 storiesOf('Tooltip', module)
-  .addDecorator(story => <Container>{story()}</Container>)
-  .addWithInfo('Hover', () => {
+  .addDecorator(story => <Box m={4}>{story()}</Box>)
+  .addWithInfo('Standard', () => {
     return (
-      <div>
-        <Tooltip message='Lorem ipsum dolor sit'>
-          <a>Hover over me</a>
-        </Tooltip>
-        <br />
-        <Tooltip>
-          <a>Disabled hover tooltip</a>
-        </Tooltip>
-      </div>
+      <Box>
+        <Button
+          tooltip='Tooltip on top'
+          m={2}
+          primary
+          onPress={action('case-1')}
+        >
+          Tooltip on top
+        </Button>
+        <Button
+          tooltip={{ text: 'Tooltip on right', placement: 'right' }}
+          m={2}
+          secondary
+          onPress={action('case-2')}
+        >
+          Tooltip on right
+        </Button>
+        <Button
+          tooltip={{ text: 'Tooltip on bottom', placement: 'bottom' }}
+          m={2}
+          success
+          onPress={action('case-3')}
+        >
+          Tooltip on bottom
+        </Button>
+        <Button
+          tooltip={{ text: 'Tooltip on left', placement: 'left' }}
+          m={2}
+          tertiary
+          onPress={action('case-4')}
+        >
+          Tooltip on left
+        </Button>
+      </Box>
     )
   })
   .addWithInfo('Click', () => {
     return (
-      <div>
-        <Tooltip message='Lorem ipsum dolor sit' eventType='click'>
-          <a>Click me</a>
-        </Tooltip>
-        <br />
-        <Tooltip eventType='click'>
-          <a>Disabled click tooltip</a>
-        </Tooltip>
-      </div>
+      <Box>
+        <Button
+          tooltip={{ text: 'Tooltip on top', trigger: 'click' }}
+          m={2}
+          primary
+          onPress={action('case-1')}
+        >
+          Tooltip on top
+        </Button>
+        <Button
+          tooltip={{
+            text: 'Tooltip on right',
+            trigger: 'click',
+            placement: 'right'
+          }}
+          m={2}
+          secondary
+          onPress={action('case-2')}
+        >
+          Tooltip on right
+        </Button>
+        <Button
+          tooltip={{
+            text: 'Tooltip on bottom',
+            trigger: 'click',
+            placement: 'bottom'
+          }}
+          m={2}
+          success
+          onPress={action('case-3')}
+        >
+          Tooltip on bottom
+        </Button>
+        <Button
+          tooltip={{
+            text: 'Tooltip on left',
+            trigger: 'click',
+            placement: 'left'
+          }}
+          m={2}
+          tertiary
+          onPress={action('case-4')}
+        >
+          Tooltip on left
+        </Button>
+      </Box>
     )
   })

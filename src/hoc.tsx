@@ -39,10 +39,11 @@ type BaseProps = {
 };
 
 const withTooltip = (Base: React.StatelessComponent) => {
-	return ({ tooltip, ...props }: any) => {
-		if (tooltip) {
-			props = tt.bindProps(tooltip, props);
+	return ({ ...props }: any) => {
+		if (props.tooltip) {
+			props = tt.bindProps(props);
 		}
+		delete props.tooltip;
 		return <Base {...props} />;
 	};
 };
