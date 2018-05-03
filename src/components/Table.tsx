@@ -11,6 +11,7 @@ import * as React from 'react';
 import FaSort = require('react-icons/lib/fa/sort');
 import { TableColumn, TableProps } from 'rendition';
 import styled from 'styled-components';
+import { stopEvent } from '../utils';
 
 import theme from '../theme';
 import Button from './Button';
@@ -37,17 +38,17 @@ const BaseTable = styled.table`
 		}
 	}
 
-	> [data-display='table-body'] {
+	> [data-display="table-body"] {
 		display: table-row-group;
 
-		> [data-display='table-row'] {
+		> [data-display="table-row"] {
 			display: table-row;
 			cursor: ${(props: any) =>
 				!!props.onRowClick || !!props.getRowHref ? 'pointer' : 'auto'};
 			text-decoration: none;
 			color: inherit;
 
-			> [data-display='table-cell'] {
+			> [data-display="table-cell"] {
 				display: table-cell;
 				text-align: left;
 				font-size: 14px;
@@ -69,7 +70,7 @@ const BaseTable = styled.table`
 						: ''};
 			}
 
-			&[data-checked='true'] {
+			&[data-checked="true"] {
 				${highlightStyle} > td:first-child {
 					box-shadow: inset 3px 0px 0 ${theme.colors.info.main};
 				}
@@ -272,7 +273,17 @@ export default class Table<T> extends React.Component<
 									<span data-display="table-cell">
 										<Input
 											checked={isChecked}
-											onChange={() => this.toggleChecked(row)}
+											onClick={(e: Event) => {
+												if (getRowHref) {
+													stopEvent(e);
+												}
+											}}
+											onChange={(e: React.MouseEvent<HTMLElement>) => {
+												this.toggleChecked(row);
+												if (e.nativeEvent && e.nativeEvent.type === 'click') {
+													setTimeout(() => this.forceUpdate());
+												}
+											}}
 											type="checkbox"
 										/>
 									</span>
